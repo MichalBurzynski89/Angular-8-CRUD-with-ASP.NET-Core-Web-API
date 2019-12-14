@@ -7,6 +7,7 @@ using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.SqlServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using QBatis.DataMapper;
 using QBatis.DataMapper.DependencyInjection;
 
 namespace AspNetCoreWebAPI
@@ -28,6 +29,14 @@ namespace AspNetCoreWebAPI
             services.AddSqlMapper(options => Configuration.GetSection("Database:Primary").Bind(options));
 
             services.AddSingleton<IDistributedCache, SqlServerCache>();
+
+            services.AddOptions<SqlServerCacheOptions>()
+                .Configure<ISqlMapper>((options, mapper) => 
+                {
+                    options.ConnectionString = mapper.DataSource.ConnectionString;
+                });
+
+            services.AddSingleton<IGenericDataSource, SqlMapperDataSource>();
 
             services.AddTransient<ICustomerDao, CustomerDao>();
 
