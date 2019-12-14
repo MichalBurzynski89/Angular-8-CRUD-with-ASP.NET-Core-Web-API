@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AspNetCoreWebAPI.DataAccess.QBatis;
+using AspNetCoreWebAPI.Models.DataAccess;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
@@ -22,8 +24,13 @@ namespace AspNetCoreWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
             services.AddSqlMapper(options => Configuration.GetSection("Database:Primary").Bind(options));
+
             services.AddSingleton<IDistributedCache, SqlServerCache>();
+
+            services.AddTransient<ICustomerDao, CustomerDao>();
+
             services.AddSingleton<IConfiguration>(Configuration);
         }
 
