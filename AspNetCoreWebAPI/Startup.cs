@@ -27,7 +27,8 @@ namespace AspNetCoreWebAPI
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddSqlMapper(options => Configuration.GetSection("Database:Primary").Bind(options));
+            //services.AddSqlMapper(options => Configuration.GetSection("Database:Primary").Bind(options));
+            services.AddSqlMapper(options => Configuration.Bind("Database:Primary", options));
 
             services.AddSingleton<IDistributedCache, SqlServerCache>();
 
