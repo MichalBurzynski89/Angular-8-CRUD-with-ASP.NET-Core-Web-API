@@ -3,7 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWebAPI", "AspNetCoreWebAPI\AspNetCoreWebAPI.csproj", "{A77048BC-BE01-4A04-88E2-06EC5B968C02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreWebAPI", "AspNetCoreWebAPI\AspNetCoreWebAPI.csproj", "{A77048BC-BE01-4A04-88E2-06EC5B968C02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{90DB45AB-1B33-49CC-BD5A-75B1510ECA26}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Local NuGet Packages", "Local NuGet Packages", "{17A9953B-616A-499C-BF17-1E401B005032}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QBatis", "QBatis", "{80AEC6B8-495F-4B43-B847-CA03DD1CFC66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{C0DD8E79-D598-49BE-A412-7FABE26EB6B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Public", "Public", "{4E65D220-9DBD-4711-9AE8-D2FC4D6E93FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{02F91C90-D79B-4FA1-B268-87E1A89E86D8}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\CI\Release\QBatis.Common.2.1.176-CI52.nupkg = ..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\CI\Release\QBatis.Common.2.1.176-CI52.nupkg
+		..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\CI\Release\QBatis.Common.Logging.Log4Net.2.1.176-CI52.nupkg = ..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\CI\Release\QBatis.Common.Logging.Log4Net.2.1.176-CI52.nupkg
+		..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\CI\Release\QBatis.DataMapper.2.1.176-CI52.nupkg = ..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\CI\Release\QBatis.DataMapper.2.1.176-CI52.nupkg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{ECBB8FA5-F2A6-4134-B40B-5E397B475133}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\Public\Release\QBatis.Common.2.1.176.nupkg = ..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\Public\Release\QBatis.Common.2.1.176.nupkg
+		..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\Public\Release\QBatis.Common.Logging.Log4Net.2.1.176.nupkg = ..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\Public\Release\QBatis.Common.Logging.Log4Net.2.1.176.nupkg
+		..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\Public\Release\QBatis.DataMapper.2.1.176.nupkg = ..\..\..\Desktop\Do nauki programowania\.NET Core C#\QBatis\Architecture_QBatis_52_artifacts\artifacts\Public\Release\QBatis.DataMapper.2.1.176.nupkg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +45,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{17A9953B-616A-499C-BF17-1E401B005032} = {90DB45AB-1B33-49CC-BD5A-75B1510ECA26}
+		{80AEC6B8-495F-4B43-B847-CA03DD1CFC66} = {17A9953B-616A-499C-BF17-1E401B005032}
+		{C0DD8E79-D598-49BE-A412-7FABE26EB6B8} = {80AEC6B8-495F-4B43-B847-CA03DD1CFC66}
+		{4E65D220-9DBD-4711-9AE8-D2FC4D6E93FC} = {80AEC6B8-495F-4B43-B847-CA03DD1CFC66}
+		{02F91C90-D79B-4FA1-B268-87E1A89E86D8} = {C0DD8E79-D598-49BE-A412-7FABE26EB6B8}
+		{ECBB8FA5-F2A6-4134-B40B-5E397B475133} = {4E65D220-9DBD-4711-9AE8-D2FC4D6E93FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E36873A-0AE3-4021-A0A0-56E26A231854}
