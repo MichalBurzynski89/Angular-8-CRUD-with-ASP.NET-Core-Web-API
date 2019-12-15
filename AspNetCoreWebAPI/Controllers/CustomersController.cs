@@ -26,27 +26,31 @@ namespace AspNetCoreWebAPI.Controllers
 
         // GET: api/Customers/5
         [HttpGet("{id}", Name = "GetCustomerByID")]
-        public string Get(int id)
+        public Customer Get(string id)
         {
-            return "value";
+            var customer = _dao.GetCustomerByID(id);
+            return customer;
         }
 
         // POST: api/Customers
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Customer customer)
         {
+            _dao.CreateCustomer(customer);
         }
 
         // PUT: api/Customers/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(string id, [FromBody] Customer customer)
         {
+            _dao.UpdateCustomer(id, customer);
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(string id)
         {
+            _dao.DeleteCustomer(id);
         }
     }
 }

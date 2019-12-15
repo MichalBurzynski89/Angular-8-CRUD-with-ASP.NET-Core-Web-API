@@ -7,5 +7,34 @@
     <select id="GetCustomers" resultClass="Customer">
       SELECT * FROM [Northwind].[dbo].[Customers]
     </select>
+
+    <select id="GetCustomerByID" parameterClass="System.String" resultClass="Customer">
+      SELECT * FROM [Northwind].[dbo].[Customers] WHERE CustomerID = #id#
+    </select>
+
+    <insert id="CreateCustomer" parameterClass="Customer">
+      INSERT INTO [Northwind].[dbo].[Customers] (CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax)
+      VALUES (#CustomerID#, #CompanyName#, #ContactName#, #ContactTitle#, #Address#, #City#, #Region#, #PostalCode#, #Country#, #Phone#, #Fax#)
+    </insert>
+
+    <update id="UpdateCustomer" parameterClass="Customer">
+      UPDATE [Northwind].[dbo].[Customers] SET
+      <!-- CustomerID = #CustomerID# -->
+      CompanyName = #CompanyName#,
+      ContactName = #ContactName#,
+      ContactTitle = #ContactTitle#,
+      Address = #Address#,
+      City = #City#,
+      Region = #Region#,
+      PostalCode = #PostalCode#,
+      Country = #Country#,
+      Phone = #Phone#,
+      Fax = #Fax#
+      WHERE CustomerID = #CustomerID#
+    </update>
+
+    <delete id="DeleteCustomer" parameterClass="System.String">
+      DELETE FROM [Northwind].[dbo].[Customers] WHERE CustomerID = #id#
+    </delete>
   </statements>
 </sqlMap>
