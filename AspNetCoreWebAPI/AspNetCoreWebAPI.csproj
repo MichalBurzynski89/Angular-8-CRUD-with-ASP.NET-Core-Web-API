@@ -7,6 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="DataAccess.QBatis\Config\providers.config" />
+    <Content Remove="DataAccess.QBatis\Config\SqlMap.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="DataAccess.QBatis\SqlMaps\Customers.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccess.QBatis\Config\providers.config" />
+    <EmbeddedResource Include="DataAccess.QBatis\Config\SqlMap.config" />
+    <EmbeddedResource Include="DataAccess.QBatis\SqlMaps\Customers.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
