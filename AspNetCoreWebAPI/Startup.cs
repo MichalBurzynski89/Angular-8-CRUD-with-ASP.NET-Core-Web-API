@@ -48,6 +48,15 @@ namespace AspNetCoreWebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ASP.NET Core Web API", Version = "v1" });
             });
+
+            // Enable CORS
+            services.AddCors(options => 
+            {
+                options.AddPolicy("EnableCORS", builder => 
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().Build();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +79,7 @@ namespace AspNetCoreWebAPI
                 //c.RoutePrefix = string.Empty;
             });
 
+            app.UseCors("EnableCORS");
             app.UseHttpsRedirection();
             app.UseMvc();
         }
